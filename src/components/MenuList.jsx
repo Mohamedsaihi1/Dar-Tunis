@@ -2,7 +2,7 @@ import DishCard from './DishCard'
 
 function MenuList({ dishes }) {
   if (!dishes || dishes.length === 0) {
-    return <p>Aucun plat disponible.</p>
+    return <p style={{ textAlign: 'center' }}>Aucun plat disponible.</p>
   }
 
   return (

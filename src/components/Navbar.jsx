@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom"
 
-
 function Navbar() {
   return (
-    <nav className="navbar">
-      <h2 className="logo">🇹🇳 Dar Tunis</h2>
-      <div className="navlinks">
+    <nav>
+      <h2>🇹🇳 Dar Tounsi</h2>
+      <div>
         <Link to="/">Home</Link>
         <Link to="/dishes">Menu</Link>
-        <Link to="/contact">contact</Link>
+        <Link to="/admin/add">Add Foods</Link>
+        <Link to="/contact">Contact</Link>
       </div>
     </nav>
-  );
+  )
 }
-export default Navbar;
+
+export default Navbar

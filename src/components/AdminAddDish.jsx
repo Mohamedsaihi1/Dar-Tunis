@@ -4,17 +4,25 @@ function AdminAddDish() {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [price, setPrice] = useState('')
+  const [image, setImage] = useState('')
 
   function handleSubmit(e) {
     e.preventDefault()
-    alert('Plat ajouté : ' + name)
+    alert(
+      'Plat ajouté :\n' + 
+      'Nom : ' + name + '\n' +
+      'Description : ' + description + '\n' +
+      'Prix : ' + price + ' DT\n' +
+      'Image : ' + image
+    )
     setName('')
     setDescription('')
     setPrice('')
+    setImage('')
   }
 
   return (
-    <div>
+    <div className="form-container">
       <h2>Ajouter un plat</h2>
       <form onSubmit={handleSubmit}>
         <input
@@ -24,7 +32,6 @@ function AdminAddDish() {
           onChange={(e) => setName(e.target.value)}
           required
         />
-        <br /><br />
         <input
           type="text"
           placeholder="Description"
@@ -32,16 +39,22 @@ function AdminAddDish() {
           onChange={(e) => setDescription(e.target.value)}
           required
         />
-        <br /><br />
         <input
           type="number"
-          placeholder="Prix"
+          step="0.1"
+          placeholder="Prix (DT)"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           required
         />
-        <br /><br />
-        <button type="submit">Ajouter</button>
+        <input
+          type="url"
+          placeholder="Lien de l'image (URL)"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+          required
+        />
+        <button type="submit">Ajouter le plat</button>
       </form>
     </div>
   )

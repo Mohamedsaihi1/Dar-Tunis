@@ -1,20 +1,22 @@
-import { Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Home from './components/Home'
 import MenuList from './components/MenuList'
 import AdminAddDish from './components/AdminAddDish'
-import data from './assets/data.json'
+import Contact from './components/Contact'
+import data from './data.json'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<h1>Bienvenue</h1>} />
+        <Route path="/" element={<Home />} />
         <Route path="/dishes" element={<MenuList dishes={data} />} />
         <Route path="/admin/add" element={<AdminAddDish />} />
-        <Route path="/contact" element={<h1>Contact</h1>} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-    </>
+    </BrowserRouter>
   )
 }
 
